@@ -1,32 +1,25 @@
 require 'rails_helper'
 
-feature "user can view index page" do
-  scenario "user will see full options for images" do
-    trip = create_list(:trip, 3)
+feature "user can view package index page" do
+  scenario "user will see all packages offered" do
+
+    package1, package2, package3 = create_list(:package, 3)
+
     visit root_path
-    click_on "Trips"
+    click_on "Explore"
 
-    expect(current_path).to eq(trips_path)
+    expect(current_path).to eq(packages_path)
 
-    within("nav_bar") do
-      expect(page).to have_link "Cart", href: cart_path
-      expect(page).to have_content "Logo"
-    end
+    expect(page).to have_link package1.title, href: package_path(package1)
+    expect(page).to have_xpath("//img[@src=\"#{package1.image}\"]")
 
-    expect(page).to have_content "Mars"
-    expect(page).to have_content "See the red planet up close"
-    expect(page).to have_content "Moon"
-    expect(page).to have_content "Walk on the moon"
-    expect(page).to have_content "Deep Space"
-    expect(page).to have_content "See the skies like you have never seen them before"
+
+    expect(page).to have_link package2.title, href: package_path(package2)
+    expect(page).to have_xpath("//img[@src=\"#{package2.image}\"]")
+
+    expect(page).to have_link package3.title, href: package_path(package3)
+    expect(page).to have_xpath("//img[@src=\"#{package3.image}\"]")
+
   end
 
 end
-
-
-#Destination: Mars, Moon, Deep Space
-#Trip table attributes:
-#location, price, description, image_path
-#Extras: Hotel, Space Walk, Dinner, Rover Rental, Stargazing
-#Extras table attributes:
-#Title, description, price

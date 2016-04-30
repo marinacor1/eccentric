@@ -1,6 +1,9 @@
 <h1>Eccentric</h1>
 <%= link_to "Explore", packages_path %>
 
+<%= @destinations.each do |destination|  %>
+<%= link_to "#{destination.planet}", destination %>
+<% end %>
 <div class="nav">
 <%= link_to "All Packages", packages_path %>
 <h2>Eccentric </h2>

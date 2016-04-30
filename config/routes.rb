@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/packages', to: "packages#index"
   # get '/packages/:id', to: "packages#show"
   resources :packages, only: [:show]
+  # get '/destinations/:id', to: "destinations#show"
+  resources :destinations, only: [:show]
   # get '/login', to: "sessions#new"
   # post '/login', to: "sessions#create"
   # get '/signup', to: "users#new"

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "a guest can browse by destination" do
   scenario "a guest sees an associated item for that destination " do
 
-    package = create(:package)
+    package = Package.create(title: "Destination Honeymoon", price: 110, description: "Beautiful trip together.", destination_id: 1, status: "cancelled", image_file_name: "lsdjfls")
 
     visit root_path
 
@@ -15,7 +15,9 @@ RSpec.feature "a guest can browse by destination" do
   end
 
   scenario "a guest sees all associated items for a destination" do
-    package1, package2, package3 = create_list(:package, 3)
+    package1 = Package.create(title: "Destination Honeymoon", price: 110, description: "Beautiful trip together.", destination_id: 1, status: "cancelled", image_file_name: "lsdjfls")
+    package2 = Package.create(title: "Destination moon", price: 110, description: "Beautifsdsdul trip together.", destination_id: 1, status: "cancelled", image_file_name: "lsdjfls")
+    package3 = Package.create(title: "Destination Sun", price: 110, description: "Beausfsdtiful trip together.", destination_id: 1, status: "cancelled", image_file_name: "lsdjfls")
     package4 = Package.create(title: "Luxury123", price: 300,
                               description: "Fun timez",
                               destination_id: package1.destination_id)

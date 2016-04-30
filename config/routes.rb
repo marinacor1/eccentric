@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root to: "welcome#show"
   get '/packages', to: "packages#index"
+  # get :packages, to: "packages#show"
+  resources :packages, only: [:show]
   # get '/login', to: "sessions#new"
   # post '/login', to: "sessions#create"
   # get '/signup', to: "users#new"

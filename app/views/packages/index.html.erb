@@ -1,0 +1,4 @@
+<h1> Package Index Page </h1>
+<%= @packages.each do |package| %>
+<%= link_to "#{package.title}", package %>
+<% end %>

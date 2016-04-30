@@ -3,7 +3,7 @@ require 'rails_helper'
 feature "user can view package index page" do
   scenario "user will see all packages offered" do
 
-    package1, package2, package3 = create_list(:package, 3)
+    package = Package.create(title: "Destination Honeymoon", price: 110, description: "Beautiful trip together.", destination_id: 1, status: "cancelled", image_file_name: "lsdjfls")
 
     visit root_path
     click_on "Explore"

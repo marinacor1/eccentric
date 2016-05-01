@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: "welcome#show"
   get '/packages', to: "packages#index"
   get '/packages/:id', to: "packages#show"
-  # resources '/:package', to: "packages#show"
-  # get '/destinations/:id', to: "destinations#show"
+
+  get '/destinations/:id', to: "destinations#show"
   get '/:planet', to: "destinations#show", as: :destination
   # get '/login', to: "sessions#new"
   # post '/login', to: "sessions#create"

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "a guest can browse by destination" do
-  scenario "a guest sees an associated item for that destination " do
+  xscenario "a guest sees an associated item for that destination " do
     destination = Destination.create(id: 1, planet: "Sun")
     package = Package.create(title: "Destination Honeymoon", price: 110, description: "Beautiful trip together.", destination_id: 1, status: "cancelled", image_file_name: "lsdjfls")
 

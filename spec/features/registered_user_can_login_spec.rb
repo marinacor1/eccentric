@@ -4,7 +4,7 @@ RSpec.feature "registered user can log in" do
   include FeatureHelper
   context "with valid inputs" do
     scenario "they see a link to log in" do
-      @user = create(:user)
+      user = create(:user)
 
       user_login
 
@@ -14,7 +14,7 @@ RSpec.feature "registered user can log in" do
     end
   end
 
-  context "with invalid password" do
+  xcontext "with invalid password" do
     scenario "they see an error message" do
       user = create(:user)
 
@@ -33,7 +33,7 @@ RSpec.feature "registered user can log in" do
     end
   end
 
-  context "with invalid username" do
+  xcontext "with invalid username" do
     scenario "they see an error message" do
       user = create(:user)
 

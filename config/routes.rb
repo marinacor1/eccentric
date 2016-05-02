@@ -5,14 +5,44 @@ Rails.application.routes.draw do
   get '/packages/:id', to: "packages#show"
 
   get '/destinations/:id', to: "destinations#show"
-  get '/:planet', to: "destinations#show", as: :destination
+  get '/:planet', to: "destinations#show", as: :planet
+  # resources :planets, only: [:create]
+  # get '/planets/:id', to: "destinations#show", as: :destination
+  # get '/planets/:id' => 'destinations#show', as: :destination
   # get '/login', to: "sessions#new"
   # post '/login', to: "sessions#create"
   # get '/signup', to: "users#new"
-
+ # get 'products/:id' => 'catalog#view'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  # root to: "welcome#show"
+  # get '/login', to: "sessions#new"
+  # post '/login', to: "sessions#create"
+  # get '/signup', to: "users#new"
+  #
+  # delete '/logout', to: 'sessions#destroy'
+  #
+  # resources :users, only: [:create, :update]
+  # get '/dashboard', to: "users#show"
+  #
+  # namespace :admin do
+  #   get '/dashboard', to: "users#show"
+  #   resources :users, only: [:update, :delete]
+  #   get '/orders' , to: "orders#index"
+  # end
+  #
+  # get '/trip', to: "trip_packages#show"
+  # resources :charges, only: [:new, :create]
+  #
+  # resources :packages, only: [:index, :show, :create]
+  # resources :trip_packages, only: [:create, :destroy, :update]
+  # resources :orders, only: [:show, :create]
+  #
+  # get '/orders' , to: "orders#index"
+  #
+  # get '/:planet', to: "destinations#show", as: :destination
+  # resources
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

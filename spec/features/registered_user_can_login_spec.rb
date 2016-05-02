@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "registered user can log in" do
   include FeatureHelper
-  xcontext "with valid inputs" do
+  context "with valid inputs" do
     scenario "they see a link to log in" do
       user = User.create(username: "Marina", email: "m", password: "password", password_confirmation: "password")
 

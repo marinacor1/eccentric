@@ -4,7 +4,7 @@ RSpec.feature "registered user can log in" do
   include FeatureHelper
   context "with valid inputs" do
     scenario "they see a link to log in" do
-      user = User.create(username: "Marina", email: "m", password: "password", password_confirmation: "password")
+      @user = User.create(username: "Marina", email: "m", password: "password", password_confirmation: "password")
 
       user_login
 
@@ -16,7 +16,7 @@ RSpec.feature "registered user can log in" do
 
   context "with invalid password" do
     scenario "they see an error message" do
-      user = User.create(username: "Marina1", email: "m1", password: "password", password_confirmation: "password")
+      @user = User.create(username: "Marina1", email: "m1", password: "password", password_confirmation: "password")
 
       visit login_path
       click_on "Login"
@@ -34,14 +34,14 @@ RSpec.feature "registered user can log in" do
 
   context "with invalid username" do
     scenario "they see an error message" do
-      user = User.create(username: "Marina12", email: "m1", password: "password", password_confirmation: "password")
+      @user = User.create(username: "Marina12", email: "m1", password: "password", password_confirmation: "password")
 
       visit login_path
       click_on "Login"
 
       expect(current_path).to eq(login_path)
         fill_in "Username", with: "Userzz"
-        fill_in "Password", with: user.password
+        fill_in "Password", with: @user.password
         click_on "Login"
       expect(current_path).to eq(login_path)
 

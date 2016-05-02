@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root to: "welcome#show"
+  get '/login', to: "sessions#new"
   get '/packages', to: "packages#index"
   get '/packages/:id', to: "packages#show"
 
@@ -9,7 +10,6 @@ Rails.application.routes.draw do
   # resources :planets, only: [:create]
   # get '/planets/:id', to: "destinations#show", as: :destination
   # get '/planets/:id' => 'destinations#show', as: :destination
-  # get '/login', to: "sessions#new"
   # post '/login', to: "sessions#create"
   # get '/signup', to: "users#new"
  # get 'products/:id' => 'catalog#view'

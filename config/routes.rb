@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "welcome#show"
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
+  delete '/logout', to: 'sessions#destroy'
   get '/packages', to: "packages#index"
   get '/packages/:id', to: "packages#show"
 

@@ -7,9 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if @user %>
 <%= link_to "Logout", logout_path %>
-<% end %>
 <%= yield %>
 
 </body>

@@ -7,6 +7,6 @@ module FeatureHelper
     fill_in "Password", with: "password"
     click_on "Login"
 
-    expect(current_path).to eq(user_dashboard_path)
+    expect(current_path).to eq(packages_path)
   end
 end

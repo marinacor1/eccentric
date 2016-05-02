@@ -14,19 +14,18 @@ RSpec.feature "registered user can log in" do
     end
   end
 
-  xcontext "with invalid password" do
+  context "with invalid password" do
     scenario "they see an error message" do
-      user = create(:user)
+      user = User.create(username: "Marina", email: "m", password: "password", password_confirmation: "password")
 
       visit login_path
       click_on "Login"
 
       expect(current_path).to eq(login_path)
-      within ".login_form" do
         fill_in "Username", with: "Andrew"
         fill_in "Password", with: "password1"
-        click_on "Sign In"
-      end
+        click_on "Login"
+
       expect(current_path).to eq(login_path)
       expect(page).to have_content "Incorrect email/password combination."
       expect(page).to_not have_link "Logout", logout_path

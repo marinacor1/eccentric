@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root to: "welcome#show"
   get '/login', to: "sessions#new"
+  post '/login', to: "sessions#create"
   get '/packages', to: "packages#index"
   get '/packages/:id', to: "packages#show"
 
@@ -10,7 +11,6 @@ Rails.application.routes.draw do
   # resources :planets, only: [:create]
   # get '/planets/:id', to: "destinations#show", as: :destination
   # get '/planets/:id' => 'destinations#show', as: :destination
-  # post '/login', to: "sessions#create"
   # get '/signup', to: "users#new"
  # get 'products/:id' => 'catalog#view'
   # The priority is based upon order of creation: first created -> highest priority.
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   # get '/dashboard', to: "users#show"
   #
   # namespace :admin do
-  #   get '/dashboard', to: "users#show"
+    get '/dashboard', to: "users#show"
   #   resources :users, only: [:update, :delete]
   #   get '/orders' , to: "orders#index"
   # end

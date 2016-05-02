@@ -1,0 +1,8 @@
+<h1>New User Form</h1>
+<%= form_for(:session, url:login_path) do |f| %>
+<%= f.label "Username" %>
+<%= f.text_field "Username" %>
+<%= f.label "Password" %>
+<%= f.text_field "Password" %>
+<%= f.submit "Login" %>
+<% end %>

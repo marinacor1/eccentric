@@ -4,7 +4,7 @@ RSpec.feature "registered user can log in" do
   include FeatureHelper
   context "with valid inputs" do
     scenario "they see a link to log in" do
-      user = create(:user)
+      user = User.create(username: "Marina", email: "m", password: "password", password_confirmation: "password")
 
       user_login
 

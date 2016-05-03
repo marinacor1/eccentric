@@ -2,9 +2,11 @@ Rails.application.routes.draw do
 
   root to: "welcome#show"
   get '/signup', to: "users#new"
+  post '/signup', to: "users#create"
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
   delete '/logout', to: 'sessions#destroy'
+  post '/users', to: 'users#index'
   get '/packages', to: "packages#index"
   get '/packages/:id', to: "packages#show"
 

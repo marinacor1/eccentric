@@ -1,6 +1,7 @@
 <h1>New user form</h1>
-<% form_for @user do |f|%>
-<%= f.label "Username" %>
-<%= f.text_field "Username" %>
-<%= f.submit "Create Account" %>
+<%= f.text_field :username, placeholder: "Username" %>
+<%= f.text_field :email, placeholder: "Email" %>
+<%= f.password_field :password, placeholder: "Password" %>
+<%= f.password_field :password_confirmation, placeholder: "Password confirmation" %>
+<%= f.submit "Create Account"%>
 <% end %>

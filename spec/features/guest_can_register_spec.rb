@@ -11,7 +11,6 @@ RSpec.feature "guest can register" do
       click_on "Create Account"
 
       expect(current_path).to eq signup_path
-
         fill_in "Username", with: "User"
         fill_in "Email", with: "email"
         fill_in "Password", with: "password"

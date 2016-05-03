@@ -1,9 +1,9 @@
 <h1>Log In</h1>
 <%= link_to "Create Account", signup_path %>
 <%= form_for(:session, url:login_path) do |f| %>
-<%= f.label "Username" %>
+<%= f.label :username %>
 <%= f.text_field "Username" %>
-<%= f.label "Password" %>
+<%= f.label :password %>
 <%= f.text_field "Password" %>
 <%= f.submit "Login" %>
 <% end %>
